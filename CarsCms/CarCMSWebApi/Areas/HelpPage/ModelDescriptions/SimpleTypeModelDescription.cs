@@ -1,0 +1,6 @@
+namespace CarCMSWebApi.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}

@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New team</h2>
+<form id="newRental">
+    <div class="form-group">
+        <label>Customer</label>
+        <div class="tt-container">
+            <input id="customer" type="text" value="" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <ul id="players" class="list-group"></ul>
+        </div>
+    </div>
+
+    <table id="players2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Add To the Team</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            var vm = {
+                playerIds: []
+            };
+
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                    name: 'customers',
+                    display: 'name',
+                    source: customers
+                }).on("typeahead:select", function (e, customer) {
+                    vm.customerId = customer.id;
+                });
+
+            var table = $("#players2").DataTable({
+                ajax: {
+                    url: "/api/players/",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "fullName",
+                        render: function (data, type, player) {
+                            return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                        }
+                    },
+                    {
+                        data: "position.name"
+                    },
+                    {
+                        data: "realTeam"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-add' data-player-id=" + data + ">Add</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#players").on("click", ".js-add", function (e) {
+                e.preventDefault();
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to Add this player?", function (result) {
+                    if (result) {
+                        $("#players").append("<li class='list-group-item'>" + button.attr("data-player-id") + "</li>");
+                        console.log('test');
+                        vm.playerIds.push(button.attr("data-player-id"));
+                    }
+                });
+            });
+
+        });
+    </script>
+}

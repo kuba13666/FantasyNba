@@ -44,12 +44,12 @@ namespace FantasyNba.ApiConsumer
             _json = _httpResponse.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
         }
-        //public async Task<List<Stats>> GetStats()
-        //{
-        //    _client.DefaultRequestHeaders.Add("Referer", "http://stats.nba.com/scores/");
-        //    _httpResponse = await _client.GetAsync(Urlstats);
-        //    _json = _httpResponse.Content.ReadAsStringAsync().Result;
-        //    return JsonConvert.DeserializeObject<List<Stats>>(_json);
-        //}
+        public async Task<List<Stats>> GetStats()
+        {
+            _client.DefaultRequestHeaders.Add("Referer", "http://stats.nba.com/scores/");
+            _httpResponse = await _client.GetAsync(Urlstats);
+            _json = _httpResponse.Content.ReadAsStringAsync().Result;
+            return JsonConvert.DeserializeObject<List<Stats>>(_json);
+        }
     }
 }

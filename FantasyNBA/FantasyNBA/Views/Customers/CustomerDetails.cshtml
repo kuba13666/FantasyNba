@@ -1,9 +1,4 @@
 ﻿@model FantasyNBA.Models.Customer
-@{
-    ViewBag.Title = "EditCustomer";
-}
-
-<h2>EditCustomer</h2>
 <h2>@Model.Name</h2>
 
 <ul>
@@ -26,7 +21,7 @@
     <tbody></tbody>
 </table>
 
-
+@Html.ActionLink("Create new Team", "New", "Teams", new { id = Model.Id }, null);
 
 <table id="playersDataTable" class="table table-bordered table-hover">
     <thead>

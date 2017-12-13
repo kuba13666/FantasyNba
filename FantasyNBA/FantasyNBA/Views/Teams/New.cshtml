@@ -1,4 +1,4 @@
-﻿
+﻿@model FantasyNBA.Models.Customer
 @{
     ViewBag.Title = "New";
 }
@@ -8,7 +8,7 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="form-control" />
+            <input id="customer" type="text" value="@Model.Name" class="form-control" disabled/>
         </div>
     </div>
 

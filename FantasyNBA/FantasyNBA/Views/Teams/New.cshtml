@@ -4,20 +4,26 @@
 }
 
 <h2>New team</h2>
-<form id="newRental">
+<form id="newTeam">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
             <input id="customer" type="text" value="" class="form-control" />
         </div>
     </div>
+
+    <div class="form-group">
+        <label>Name of the team</label>
+        <input id="teamName" type="text" value="" class="form-control" />
+    </div>
+
     <div class="row">
         <div class="col-md-4 col-sm-4">
             <ul id="players" class="list-group"></ul>
         </div>
     </div>
 
-    <table id="players2" class="table table-bordered table-hover">
+    <table id="playersDataTable" class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>Player</th>
@@ -63,7 +69,7 @@
                     vm.customerId = customer.id;
                 });
 
-            var table = $("#players2").DataTable({
+            var table = $("#playersDataTable").DataTable({
                 ajax: {
                     url: "/api/players/",
                     dataSrc: ""
@@ -90,17 +96,32 @@
                 ]
             });
 
-            $("#players").on("click", ".js-add", function (e) {
+            $("#playersDataTable").on("click", ".js-add", function (e) {
                 e.preventDefault();
                 var button = $(this);
+                var addedPlayer = $(this).parent().parent().children().first().children().first(); // parentNode.parentNode.children[0].children[0];
+                
                 bootbox.confirm("Are you sure you want to Add this player?", function (result) {
                     if (result) {
-                        $("#players").append("<li class='list-group-item'>" + button.attr("data-player-id") + "</li>");
+                        $("#players").append("<li>" + addedPlayer + "</li>");
                         console.log('test');
                         vm.playerIds.push(button.attr("data-player-id"));
                     }
                 });
             });
+
+
+            $('#newTeam').submit(function (e) {
+                var teamName = $("#teamName").val();
+                vm.name = teamName;
+                e.preventDefault();
+                $.ajax({
+                    url: "/api/Teams",
+                    method: "post",
+                    data: vm
+                })
+            });
+
 
         });
     </script>

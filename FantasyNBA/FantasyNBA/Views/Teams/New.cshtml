@@ -100,7 +100,7 @@
                 e.preventDefault();
                 var button = $(this);
                 var addedPlayer = $(this).parent().siblings(0).html(); // parentNode.parentNode.children[0].children[0];
-                
+
                 bootbox.confirm("Are you sure you want to Add this player?", function (result) {
                     if (result) {
                         $("#players").append("<li>" + addedPlayer + "</li>");
@@ -118,7 +118,10 @@
                 $.ajax({
                     url: "/api/Teams",
                     method: "post",
-                    data: vm
+                    data: vm,
+                    success: function () {
+                        location.reload(); // then reload the page.(3)
+                    }
                 })
             });
 

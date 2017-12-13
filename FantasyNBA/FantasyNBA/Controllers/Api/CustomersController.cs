@@ -21,18 +21,19 @@ namespace FantasyNBA.Controllers.Api
         public IHttpActionResult GetCustomers()
         {
             var customers = _context.Customers
-                .Include(m => m.MembershipType)
+                .Include(t => t.Team)
+                .Include(m=>m.MembershipType)
                 .ToList();
+
             return Ok(customers);
         }
         //Get /api/customers/1
-        public IHttpActionResult GetCustomer(int id)
+        public IHttpActionResult GetCustomersTeams(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(x => x.Id == id);
-            if (customer==null)
-            {
-                return NotFound();            }
-            return Ok(customer);
+            var teams = _context.Teams.Where(x => x.CustomerId == id).ToList();
+
+
+            return Ok(teams);
         }
 
         //Post /api/customers

@@ -19,9 +19,9 @@ namespace FantasyNBA.Controllers.Api
         }
 
 
-        public IHttpActionResult GetPlayers(int id)
+        public IHttpActionResult GetTeamsPlayers(int id)
         {
-            var team = _context.Teams.SingleOrDefault(x => x.CustomerId == id);
+            var team = _context.Teams.SingleOrDefault(x => x.Id == id);
             if (team == null)
             {
                 return NotFound();

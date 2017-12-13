@@ -15,6 +15,18 @@
     </li>
 </ul>
 
+<h2>Pick one of your teams </h2>
+<table id="teamsDataTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
 
 <table id="playersDataTable" class="table table-bordered table-hover">
     <thead>
@@ -22,7 +34,6 @@
             <th>Player</th>
             <th>Position</th>
             <th>Team</th>
-            <th>Add To the Team</th>
         </tr>
     </thead>
     <tbody></tbody>
@@ -35,32 +46,52 @@
         $(document).ready(function () {
 
 
-            var table = $("#playersDataTable").DataTable({
-                ajax: {
-                    url: "/api/teams/" +  10,
-                    dataSrc: ""
-                },
-                columns: [
-                    {
-                        data: "fullName",
-                        render: function (data, type, player) {
-                            return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                var table = $("#teamsDataTable").DataTable({
+                    ajax: {
+                        url: "/api/customers/" + @Model.Id,
+                        dataSrc: ""
+                    },
+                    columns:
+                    [
+                        {
+                            data: "name",
+                            render: function (data, type, team) {
+                                return "<a class='teamclass' data-team-id=" + team.id + ">" + team.name + "</a>";
+                            }
                         }
+                    ]
+                });
+
+
+
+
+            $("#teamsDataTable").on("click", ".teamclass", function (e) {
+                e.preventDefault();
+                var teamClicked = $(this);
+                var table = $("#playersDataTable").DataTable({
+                    ajax: {
+                        url: "/api/teams/" + teamClicked.attr("data-team-id"),
+                        dataSrc: ""
                     },
-                    {
-                        data: "position.name"
-                    },
-                    {
-                        data: "realTeam"
-                    },
-                    {
-                        data: "id",
-                        render: function (data) {
-                            return "<button class='btn-link js-add' data-player-id=" + data + ">Add</button>";
+                    columns:
+                    [
+                        {
+                            data: "fullName",
+                            render: function (data, type, player) {
+                                return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                            }
+                        },
+                        {
+                            data: "position.name"
+                        },
+                        {
+                            data: "realTeam"
                         }
-                    }
-                ]
+                    ]
+                });
+
             });
+
 
             $("#playersDataTable").on("click", ".js-add", function (e) {
                 e.preventDefault();

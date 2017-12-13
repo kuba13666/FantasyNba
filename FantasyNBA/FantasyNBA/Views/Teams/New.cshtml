@@ -99,7 +99,7 @@
             $("#playersDataTable").on("click", ".js-add", function (e) {
                 e.preventDefault();
                 var button = $(this);
-                var addedPlayer = $(this).parent().parent().children().first().children().first(); // parentNode.parentNode.children[0].children[0];
+                var addedPlayer = $(this).parent().siblings(0).html(); // parentNode.parentNode.children[0].children[0];
                 
                 bootbox.confirm("Are you sure you want to Add this player?", function (result) {
                     if (result) {

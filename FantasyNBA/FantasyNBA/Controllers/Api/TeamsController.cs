@@ -17,6 +17,21 @@ namespace FantasyNBA.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
+
+
+        public IHttpActionResult GetPlayers(int id)
+        {
+            var team = _context.Teams.SingleOrDefault(x => x.CustomerId == id);
+            if (team == null)
+            {
+                return NotFound();
+            }
+            var players = _context.Players.Include(path=>path.Position).Where(x => x.TeamId == team.Id);
+            return Ok(players);
+        }
+
+
+
         [HttpPost]
         public IHttpActionResult CreateTeam(NewTeam newTeam)
         {

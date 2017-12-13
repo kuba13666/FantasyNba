@@ -15,3 +15,64 @@
     </li>
 </ul>
 
+
+<table id="playersDataTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Player</th>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Add To the Team</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+
+            var table = $("#playersDataTable").DataTable({
+                ajax: {
+                    url: "/api/teams/" +  10,
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "fullName",
+                        render: function (data, type, player) {
+                            return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                        }
+                    },
+                    {
+                        data: "position.name"
+                    },
+                    {
+                        data: "realTeam"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn-link js-add' data-player-id=" + data + ">Add</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#playersDataTable").on("click", ".js-add", function (e) {
+                e.preventDefault();
+                var button = $(this);
+                var addedPlayer = $(this).parent().siblings(0).html(); // parentNode.parentNode.children[0].children[0];
+
+            });
+
+
+
+
+
+        });
+    </script>
+}

@@ -45,6 +45,7 @@
     <script>
         $(document).ready(function () {
 
+                
 
                 var table = $("#teamsDataTable").DataTable({
                     ajax: {
@@ -63,12 +64,11 @@
                 });
 
 
-
-
             $("#teamsDataTable").on("click", ".teamclass", function (e) {
                 e.preventDefault();
                 var teamClicked = $(this);
-                var table = $("#playersDataTable").DataTable({
+                    
+                var table2 = $("#playersDataTable").DataTable({
                     ajax: {
                         url: "/api/teams/" + teamClicked.attr("data-team-id"),
                         dataSrc: ""
@@ -89,6 +89,7 @@
                         }
                     ]
                 });
+                table2.destroy();
 
             });
 

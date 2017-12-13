@@ -70,10 +70,10 @@ namespace FantasyNBA.Controllers
 
         public async Task<ActionResult> GetStatistics()
         {
-            //var client = new Client();
-            //var models = await client.GetStats();
-            //var model = models.FirstOrDefault();
-            return View();
+            var client = new Client();
+            var models = await client.GetStats();
+            var model = models.FirstOrDefault();
+            return View(model);
         }
     }
 }

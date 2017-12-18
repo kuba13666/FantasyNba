@@ -48,13 +48,13 @@ namespace FantasyNba.ApiConsumer
             _json = _httpResponse.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
         }
-        public async Task<List<RootObject>> GetStats()
+        public async Task<RootObject> GetStats()
         {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
             _httpResponse = await _client.GetAsync(Urlstats);
             _json = _httpResponse.Content.ReadAsStringAsync().Result;
             var replacedJson = _json.Replace("@category", "category").Replace("@abbreviation", "abbreviation").Replace("#text", "text");
-            return JsonConvert.DeserializeObject<List<RootObject>>(replacedJson);
+            return JsonConvert.DeserializeObject<RootObject>(replacedJson);
 
         }
     }

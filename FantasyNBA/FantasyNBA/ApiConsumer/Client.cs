@@ -52,8 +52,8 @@ namespace FantasyNba.ApiConsumer
         {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
             _httpResponse = await _client.GetAsync(Urlstats);
-              _json = _httpResponse.Content.ReadAsStringAsync().Result;
-            var replacedJson = Regex.Replace(_json, @"[@#]", "");
+            _json = _httpResponse.Content.ReadAsStringAsync().Result;
+            var replacedJson = _json.Replace("@category", "category").Replace("@abbreviation", "abbreviation").Replace("#text", "text");
             return JsonConvert.DeserializeObject<List<RootObject>>(replacedJson);
 
         }

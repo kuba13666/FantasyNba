@@ -6,6 +6,10 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using Flurl;
+using Flurl.Http;
+using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 
 namespace FantasyNba.ApiConsumer
 {
@@ -24,7 +28,7 @@ namespace FantasyNba.ApiConsumer
 
         private const string Url = "http://api.suredbits.com/nba/v0/players";
         private string Urlplayer;
-        private const string Urlstats = "http://stats.nba.com/stats/playergamelog/?PlayerID=1628384&Season=2017-18&SeasonType=Regular%20Season";
+        private const string Urlstats = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?team=bos";
 
         private string _json;
         public Client()
@@ -44,12 +48,14 @@ namespace FantasyNba.ApiConsumer
             _json = _httpResponse.Content.ReadAsStringAsync().Result;
             return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
         }
-        public async Task<List<Stats>> GetStats()
+        public async Task<List<RootObject>> GetStats()
         {
-            _client.DefaultRequestHeaders.Add("Referer", "http://stats.nba.com/scores/");
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
             _httpResponse = await _client.GetAsync(Urlstats);
-            _json = _httpResponse.Content.ReadAsStringAsync().Result;
-            return JsonConvert.DeserializeObject<List<Stats>>(_json);
+              _json = _httpResponse.Content.ReadAsStringAsync().Result;
+            var replacedJson = Regex.Replace(_json, @"[@#]", "");
+            return JsonConvert.DeserializeObject<List<RootObject>>(replacedJson);
+
         }
     }
 }

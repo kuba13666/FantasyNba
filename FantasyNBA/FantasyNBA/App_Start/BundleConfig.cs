@@ -15,8 +15,10 @@ namespace FantasyNBA
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap.js",
-                        "~/scripts/typeahead.bundle.js"
-                      ));
+                        "~/scripts/typeahead.bundle.js",
+                        "~/scripts/Chart.js",
+                        "~/scripts/Chart.min.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

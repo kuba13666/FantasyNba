@@ -186,3 +186,7 @@ C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csproj.CoreCompileInputs.cache
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.dll
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.pdb
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.dll
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.Http.dll
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.xml
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.Http.xml

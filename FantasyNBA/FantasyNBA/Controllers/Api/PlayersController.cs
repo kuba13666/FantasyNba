@@ -1,11 +1,6 @@
 ﻿using FantasyNBA.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Data.Entity;
 
 namespace FantasyNBA.Controllers.Api
 {
@@ -20,7 +15,7 @@ namespace FantasyNBA.Controllers.Api
         //Get /api/players
         public IHttpActionResult GetPlayers()
         {
-            var players = _context.Players.Include(x=>x.Position).ToList();
+            var players = _context.Players.ToList();
             return Ok(players);
 
         }

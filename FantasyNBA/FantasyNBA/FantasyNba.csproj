@@ -223,61 +223,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712081516523_initialize.cs" />
-    <Compile Include="Migrations\201712081516523_initialize.Designer.cs">
-      <DependentUpon>201712081516523_initialize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081533054_IsSubscribedToNewsletter.cs" />
-    <Compile Include="Migrations\201712081533054_IsSubscribedToNewsletter.Designer.cs">
-      <DependentUpon>201712081533054_IsSubscribedToNewsletter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081600303_AddMembershipTypes.cs" />
-    <Compile Include="Migrations\201712081600303_AddMembershipTypes.Designer.cs">
-      <DependentUpon>201712081600303_AddMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081602283_PopulateMembershipTypes.cs" />
-    <Compile Include="Migrations\201712081602283_PopulateMembershipTypes.Designer.cs">
-      <DependentUpon>201712081602283_PopulateMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081611241_ApplyAAnntoations.cs" />
-    <Compile Include="Migrations\201712081611241_ApplyAAnntoations.Designer.cs">
-      <DependentUpon>201712081611241_ApplyAAnntoations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081700328_AddnameMembership.cs" />
-    <Compile Include="Migrations\201712081700328_AddnameMembership.Designer.cs">
-      <DependentUpon>201712081700328_AddnameMembership.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081702009_PopulatemembershipTyoename.cs" />
-    <Compile Include="Migrations\201712081702009_PopulatemembershipTyoename.Designer.cs">
-      <DependentUpon>201712081702009_PopulatemembershipTyoename.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081705010_AddBirthdateToCustomer.cs" />
-    <Compile Include="Migrations\201712081705010_AddBirthdateToCustomer.Designer.cs">
-      <DependentUpon>201712081705010_AddBirthdateToCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081715502_AddPosition.cs" />
-    <Compile Include="Migrations\201712081715502_AddPosition.Designer.cs">
-      <DependentUpon>201712081715502_AddPosition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081716469_populatePosition.cs" />
-    <Compile Include="Migrations\201712081716469_populatePosition.Designer.cs">
-      <DependentUpon>201712081716469_populatePosition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081718592_PositiontoDatabase.cs" />
-    <Compile Include="Migrations\201712081718592_PositiontoDatabase.Designer.cs">
-      <DependentUpon>201712081718592_PositiontoDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081754050_UpdatePlayers.cs" />
-    <Compile Include="Migrations\201712081754050_UpdatePlayers.Designer.cs">
-      <DependentUpon>201712081754050_UpdatePlayers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081756012_PopulatePlayers.cs" />
-    <Compile Include="Migrations\201712081756012_PopulatePlayers.Designer.cs">
-      <DependentUpon>201712081756012_PopulatePlayers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712121201223_AddTeam.cs" />
-    <Compile Include="Migrations\201712121201223_AddTeam.Designer.cs">
-      <DependentUpon>201712121201223_AddTeam.cs</DependentUpon>
+    <Compile Include="Migrations\201712202026215_Init.cs" />
+    <Compile Include="Migrations\201712202026215_Init.Designer.cs">
+      <DependentUpon>201712202026215_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -287,8 +235,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\NewTeam.cs" />
+    <Compile Include="Models\DTOs\PlayerDTO.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Stats.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -563,47 +511,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712081516523_initialize.resx">
-      <DependentUpon>201712081516523_initialize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081533054_IsSubscribedToNewsletter.resx">
-      <DependentUpon>201712081533054_IsSubscribedToNewsletter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081600303_AddMembershipTypes.resx">
-      <DependentUpon>201712081600303_AddMembershipTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081602283_PopulateMembershipTypes.resx">
-      <DependentUpon>201712081602283_PopulateMembershipTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081611241_ApplyAAnntoations.resx">
-      <DependentUpon>201712081611241_ApplyAAnntoations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081700328_AddnameMembership.resx">
-      <DependentUpon>201712081700328_AddnameMembership.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081702009_PopulatemembershipTyoename.resx">
-      <DependentUpon>201712081702009_PopulatemembershipTyoename.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081705010_AddBirthdateToCustomer.resx">
-      <DependentUpon>201712081705010_AddBirthdateToCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081715502_AddPosition.resx">
-      <DependentUpon>201712081715502_AddPosition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081716469_populatePosition.resx">
-      <DependentUpon>201712081716469_populatePosition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081718592_PositiontoDatabase.resx">
-      <DependentUpon>201712081718592_PositiontoDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081754050_UpdatePlayers.resx">
-      <DependentUpon>201712081754050_UpdatePlayers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081756012_PopulatePlayers.resx">
-      <DependentUpon>201712081756012_PopulatePlayers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712121201223_AddTeam.resx">
-      <DependentUpon>201712121201223_AddTeam.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712202026215_Init.resx">
+      <DependentUpon>201712202026215_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

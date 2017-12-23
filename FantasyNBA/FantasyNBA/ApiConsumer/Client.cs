@@ -1,17 +1,12 @@
 ﻿using FantasyNba.ApiConsumer.Models;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
-using Flurl;
-using Flurl.Http;
 using System.Net.Http.Headers;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using FantasyNBA.Models;
 
-namespace FantasyNba.ApiConsumer
+namespace FantasyNBA.ApiConsumer
 {
     public class Client
     {
@@ -26,7 +21,7 @@ namespace FantasyNba.ApiConsumer
         private HttpResponseMessage _httpResponse;
         // Set referer property  to http://www.microsoft.com .
 
-        private const string Url = "http://api.suredbits.com/nba/v0/players";
+        private const string Url = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/active_players.json";
         private string Urlplayer;
         private const string Urlstats = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?team=bos";
 
@@ -35,19 +30,19 @@ namespace FantasyNba.ApiConsumer
         {
             _client = new HttpClient();
         }
-        public async Task<List<PlayersApi>> GetAll()
+        public async Task<List<Playerentry>> GetAll()
         {
-
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
             _httpResponse = await _client.GetAsync(Url);
             _json = _httpResponse.Content.ReadAsStringAsync().Result;
-            return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
+            return (List<Playerentry>)(JsonConvert.DeserializeObject<RootObjectPlayers>(_json).activeplayers.playerentry);
         }
-        public async Task<List<PlayersApi>> GetOne()
-        {
-            _httpResponse = await _client.GetAsync(Urlplayer);
-            _json = _httpResponse.Content.ReadAsStringAsync().Result;
-            return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
-        }
+        //public async Task<List<PlayersApi>> GetOne()
+        //{
+        //    _httpResponse = await _client.GetAsync(Urlplayer);
+        //    _json = _httpResponse.Content.ReadAsStringAsync().Result;
+        //    return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
+        //}
         public async Task<RootObject> GetStats()
         {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");

@@ -1,4 +1,5 @@
 ﻿using FantasyNba.ApiConsumer;
+using FantasyNBA.ApiConsumer;
 using FantasyNBA.Models;
 using FantasyNBA.ViewModels;
 using System;
@@ -29,12 +30,12 @@ namespace FantasyNBA.Controllers
         public ActionResult GetPlayers()
         {
 
-            var players = _context.Players.Include(p => p.Position).ToList();
+            var players = _context.Players.ToList();
             return View(players);
         }
         public ActionResult GetPlayerDetails(int id)
         {
-            var players = _context.Players.Include(p => p.Position).SingleOrDefault(c => c.Id == id);
+            var players = _context.Players.SingleOrDefault(c => c.InternalId == id);
             if (players == null)
                 return HttpNotFound();
 
@@ -50,30 +51,33 @@ namespace FantasyNBA.Controllers
             {
                 var NewPlayer = new Player
                 {
-                    LastYear = player.lastYear,
-                    RookieYear = player.rookieYear,
-                    FullName = player.fullName,
-                    LastName = player.lastName,
-                    FirstName = player.FirstName,
-                    BirthDate = player.birthDate,
-                    ProfileUrl = player.profileUrl,
-                    Status = player.status,
-                    RealTeam = player.team,
-                    PositionId = rnd.Next(1, 5)
+                    PlayerApiID = player.player.ID,
+                    LastName = player.player.LastName,
+                    FirstName = player.player.FirstName,
+                    JerseyNumber = player.player.JerseyNumber,
+                    Position = player.player.Position,
+                    Height = player.player.Height,
+                    Weight = player.player.Weight,
+                    BirthDate = player.player.BirthDate,
+                    Age = player.player.Age,
+                    BirthCity = player.player.BirthCity,
+                    BirthCountry = player.player.BirthCountry,
+                    IsRookie = player.player.IsRookie,
+                    officialImageSrc = player.player.officialImageSrc
                 };
-                _context.Players.Add(NewPlayer);
+                    _context.Players.Add(NewPlayer);
+                }
+                _context.SaveChanges();
+
+                return RedirectToAction("GetPlayers", "Players");
             }
-            _context.SaveChanges();
 
-            return RedirectToAction("GetPlayers", "Players");
-        }
+            public async Task<ActionResult> GetStatistics()
+            {
+                var client = new Client();
+                var model = await client.GetStats();
 
-        public async Task<ActionResult> GetStatistics()
-        {
-            var client = new Client();
-            var model = await client.GetStats();
-
-            return View(model);
+                return View(model);
+            }
         }
     }
-}

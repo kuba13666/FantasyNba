@@ -23,7 +23,6 @@ namespace FantasyNBA.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
-        public DbSet<Position> Positions { get; set; }
         public DbSet<Team> Teams { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

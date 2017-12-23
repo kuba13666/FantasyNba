@@ -4,11 +4,14 @@
 }
 
 <h2>GetPlayerDetails</h2>
-<h2>@Model.FullName</h2>
+<h2>@Model.LastName @Model.FirstName</h2>
 
 <ul>
     <li>
-        @Model.Position.Name
+        @Model.Position
+    </li>
+    <li>
+        <img src="@Model.officialImageSrc" />
     </li>
 </ul>
 

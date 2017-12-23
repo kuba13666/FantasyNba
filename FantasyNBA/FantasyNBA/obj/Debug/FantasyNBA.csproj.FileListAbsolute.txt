@@ -168,21 +168,6 @@ C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.Serv
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.Web.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csprojResolveAssemblyReference.cache
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.initialize.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.IsSubscribedToNewsletter.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddMembershipTypes.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PopulateMembershipTypes.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.ApplyAAnntoations.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddnameMembership.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PopulatemembershipTyoename.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddBirthdateToCustomer.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddPosition.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.populatePosition.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PositiontoDatabase.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.UpdatePlayers.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PopulatePlayers.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddTeam.resources
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csproj.GenerateResource.Cache
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csproj.CoreCompileInputs.cache
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.dll
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.pdb
@@ -190,3 +175,5 @@ C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.dll
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.Http.dll
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.Http.xml
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.Init.resources
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csproj.GenerateResource.Cache

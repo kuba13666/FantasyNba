@@ -37,7 +37,7 @@ namespace FantasyNBA.Controllers.Api
         {
             var customer = _context.Customers.Single(c => c.Id == newTeam.CustomerId);
             
-            var players = _context.Players.Where(p => newTeam.PlayerIds.Contains(p.Id)).ToList();
+            var players = _context.Players.Where(p => newTeam.PlayerIds.Contains(p.InternalId)).ToList();
 
             var team = new Team
             {

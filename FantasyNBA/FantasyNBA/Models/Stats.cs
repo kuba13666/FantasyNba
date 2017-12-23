@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FantasyNba.ApiConsumer.Models
+namespace FantasyNBA.Models
 {
-    public class Team
+    public class RealTeam
     {
         public string ID { get; set; }
         public string City { get; set; }
@@ -18,12 +18,12 @@ namespace FantasyNba.ApiConsumer.Models
         public string id { get; set; }
         public string date { get; set; }
         public string time { get; set; }
-        public Team awayTeam { get; set; }
-        public Team homeTeam { get; set; }
+        public RealTeam awayTeam { get; set; }
+        public RealTeam homeTeam { get; set; }
         public string location { get; set; }
     }
 
-    public class Player
+    public class PlayerApi
     {
         public string ID { get; set; }
         public string LastName { get; set; }
@@ -114,7 +114,7 @@ namespace FantasyNba.ApiConsumer.Models
     public class Gamelog
     {
         public Game game { get; set; }
-        public Player player { get; set; }
+        public PlayerApi player { get; set; }
         public Team team { get; set; }
         public Stats stats { get; set; }
     }

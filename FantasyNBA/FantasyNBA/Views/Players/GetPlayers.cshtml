@@ -30,16 +30,16 @@
                 },
                 columns: [
                     {
-                        data: "fullName",
+                        data: "lastName",
                         render: function (data, type, player) {
-                            return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                            return "<a href='/players/GetPlayerDetails/" + player.internalId + "'>" + player.lastName + ' ' + player.firstName + "</a>";
                         }
                     },
                     {
-                        data: "position.name"
+                        data: "position"
                     },
                     {
-                        data: "realTeam"                   
+                        data: "age"                   
                     }
                 ]
             });

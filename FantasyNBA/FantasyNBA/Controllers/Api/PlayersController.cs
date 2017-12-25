@@ -1,5 +1,7 @@
-﻿using FantasyNBA.Models;
+﻿using FantasyNBA.ApiConsumer;
+using FantasyNBA.Models;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace FantasyNBA.Controllers.Api
@@ -13,21 +15,24 @@ namespace FantasyNBA.Controllers.Api
             _context = new ApplicationDbContext();
         }
         //Get /api/players
-        public IHttpActionResult GetPlayers()
+        public async Task<IHttpActionResult> GetPlayers()
         {
-            var players = _context.Players.ToList();
+            var client = new Client();
+            var players = await client.GetAll();
             return Ok(players);
 
         }
         //Get /api/players/1
-        public IHttpActionResult GetPlayer(int id)
+        public async Task<IHttpActionResult> GetPlayer(int id)
         {
-            var player = _context.Customers.SingleOrDefault(x => x.Id == id);
-            if (player == null)
+            var client = new Client(id);
+            var playerObject = await client.GetOne();
+            if (playerObject == null)
             {
                 return NotFound();
             }
-            return Ok(player);
+            var playerEntry = playerObject.FirstOrDefault();
+            return Ok(playerEntry);
         }
     }
 }

@@ -30,16 +30,11 @@ namespace FantasyNBA.Controllers
         public ActionResult GetPlayers()
         {
 
-            var players = _context.Players.ToList();
-            return View(players);
+            return View();
         }
         public ActionResult GetPlayerDetails(int id)
         {
-            var players = _context.Players.SingleOrDefault(c => c.InternalId == id);
-            if (players == null)
-                return HttpNotFound();
-
-            return View(players);
+            return View(id);
         }
 
         public async Task<ActionResult> DownloadPlayerList()

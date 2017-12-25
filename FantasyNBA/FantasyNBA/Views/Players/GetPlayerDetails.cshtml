@@ -1,18 +1,162 @@
-﻿@model FantasyNBA.Models.Player
-@{
-    ViewBag.Title = "GetPlayerDetails";
+﻿@model Int32
+<div class="summary">
+    <div class="row player-summary">
+        <div class="[ small-12 / columns ]" style="position: relative;">
+
+            <div class="summary__container team-color-gradient n-p [ small-12 / columns ]">
+
+                <div class="player-summary__inner">
+
+                    <div class="player-summary__image-block">
+                        <img player-id="" team-id="" class="player-img" src="" alt="" title="">
+                    </div>
+
+                    <div class="player-summary__info">
+                        <a class="player-summary__team-logo">
+                            <img team-logo="" abbr="CHA" class="team-img" type="image/svg+xml" src="" alt="Charlotte Hornets logo" title="Charlotte Hornets logo">
+                        </a>
+                        <div class="player-summary__text">
+                            <div class="player-summary__text-top">
+                                <!----><span class="player-summary__player-number"><span class="player-summary__hash">#</span></span><!---->
+                                <div class="player-summary__player-name">
+                                    <p class="player-summary__first-name"></p>
+                                    <p class="player-summary__last-name"></p>
+                                </div>
+                            </div>
+                            <div class="player-summary__text-bottom">
+                                <span class="player-summary__player-pos"></span>
+                                <a><span class="player-summary__team-name"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-stats n-p [ columns / small-12 ]">
+                <div class="player-stats__right n-p [ columns / medium-4 / medium-push-8 ]">
+                    <div class="player-stats__item player-stats__pts n-p [ columns / small-3 ] stats-link">
+                        <!----><a>
+                            <div class="player-stats__stat-title"></div>
+                            <span class="player-stats__stat-value">21.5</span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__reb n-p [ columns / small-3 ] stats-link" ng-class="{ 'stats-link': availableStats.current }">
+                        <!----><a ng-if="availableStats.current" href="/players/traditional/?sort=REB&amp;dir=-1">
+                            <div class="player-stats__stat-title">REB</div>
+                            <span class="player-stats__stat-value">3.5</span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__ast n-p [ columns / small-3 ] stats-link" ng-class="{ 'stats-link': availableStats.current }">
+                        <!----><a ng-if="availableStats.current" href="/players/traditional/?sort=AST&amp;dir=-1">
+                            <div class="player-stats__stat-title">AST</div>
+                            <span class="player-stats__stat-value">5.8</span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__pie n-p [ columns / small-3 ] stats-link" ng-class="{ 'stats-link': availableStats.current }">
+                        <!----><a ng-if="availableStats.current" href="/players/advanced/?sort=PIE&amp;dir=-1">
+                            <div class="player-stats__stat-title">PIE</div>
+                            <span class="player-stats__stat-value">13.3</span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+                <div class="player-stats__left n-p [ columns / medium-4 / medium-pull-4 ]">
+                    <div class="player-stats__item player-stats__height n-p stats-link columns small-3 medium-6" ng-class="availableStats.current ? 'stats-link columns small-3 medium-6' : 'columns small-4'">
+                        <!----><a ng-if="availableStats.current" href="/players/bio/?sort=PLAYER_HEIGHT_INCHES&amp;dir=1&amp;CF=PLAYER_HEIGHT_INCHES*E*">
+                            <div class="player-stats__stat-title">HT</div>
+                            <span class="player-stats__stat-value">6-1</span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__weight n-p stats-link columns small-3 medium-6" ng-class="availableStats.current ? 'stats-link columns small-3 medium-6' : 'columns small-4'">
+                        <!----><a ng-if="availableStats.current" href="/players/bio/?sort=PLAYER_WEIGHT&amp;dir=1&amp;CF=PLAYER_WEIGHT*E*184">
+                            <div class="player-stats__stat-title">WT</div>
+                            <span class="player-stats__stat-value">184 <span class="player-stats__lbs">lbs</span></span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__age n-p stats-link columns small-3 medium-6" ng-class="availableStats.current ? 'stats-link columns small-3 medium-6' : 'hide'">
+                        <!----><a ng-if="availableStats.current" href="/players/bio/#!?sort=AGE&amp;dir=1&amp;CF=AGE*E*27">
+                            <div class="player-stats__stat-title">AGE</div>
+                            <span class="player-stats__stat-value">27</span> <!----><span ng-if="playerInfo.AGE_DAYS" class="player-stats__age-days">231d</span><!---->
+                        </a><!---->
+                        <!---->
+                        <!----> <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__birthdate n-p columns small-3 medium-6" ng-class="availableStats.current ? 'columns small-3 medium-6' : 'columns small-4'">
+                        <div class="player-stats__stat-title">BORN</div>
+                        <span class="player-stats__stat-value">05/08/1990</span>
+                    </div>
+                </div>
+                <div class="player-stats__middle n-p [ columns / medium-4 / medium-pull-4 ]">
+                    <div class="player-stats__item player-stats__prior n-p [ columns / small-6 / medium-12 ]">
+                        <div class="player-stats__stat-title">PRIOR</div>
+                        <span class="player-stats__stat-value">Connecticut/USA</span>
+                    </div>
+                    <div class="player-stats__item player-stats__draft n-p [ columns / small-6 / medium-8 ] stats-link" ng-class="playerInfo.DRAFT_YEAR != 'Undrafted' ? 'stats-link' : ''">
+                        <!----><a ng-if="playerInfo.DRAFT_YEAR != 'Undrafted'" href="/draft/history/?Season=2011">
+                            <div class="player-stats__stat-title">DRAFT</div>
+                            <span class="player-stats__stat-value">2011 Rnd 1 Pick 9</span>
+                        </a><!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="player-stats__item player-stats__experience n-p [ columns / medium-4 / hide-for-small-only ]">
+                        <div class="player-stats__stat-title">EXP</div>
+                        <!----><div class="player-stats__stat-value" ng-if="playerInfo.SEASON_EXP!=0">6 <span class="player-stats__exp-yrs">yrs</span></div><!---->
+                        <!---->
+                    </div>
+                </div>
+            </div>
+
+            <!----><div ng-if="::showAllStarBtn" class="player-summary__as-vote-btn-mobile [ show-for-small-only ]">
+                <a href="https://vote.nba.com/?mw=true&amp;iref=asv18_stats_320_33plyprof&amp;cid=asv18_stats_320_33plyprof">
+                    <img src="/media/img/NBA_ASV_Banners_Static_283X33_StatsPlayer.png" alt="NBA All-Star 2018 Vote">
+                </a>
+            </div><!---->
+        </div>
+    </div>
+
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+        var playerImage = $(".player-img")
+            $.ajax({
+                url: "/api/players/" + @Model,
+                method: "get",
+                success: function (data) {
+                    $(".summary__container").addClass(data.team.abbreviation);
+                    $(".player-summary__team-logo").children().attr({
+                        src: '/Media/' + data.team.abbreviation + '.svg',
+                        title: data.team.name + ' logo',
+                        alt: data.team.name + ' logo',
+                        abbr: data.team.abbreviation
+                    });
+                    $(".player-summary__first-name").text(data.player.firstName);
+                    $(".player-summary__last-name").text(data.player.lastName);
+                    $(".player-summary__player-pos").text(data.player.position);
+                    $(".player-summary__team-name").text(data.team.name);
+                    $(".player-summary__hash").text(data.player.jerseyNumber);
+                    $(".player-img").attr({
+                        src: data.player.officialImageSrc,
+                        title: data.player.firstName + ' ' + data.player.lastName,
+                        alt: data.player.firstName + ' ' + data.player.lastName,
+                        'team-id': data.team.iD,
+                        'player-id': data.player.iD
+                    });
+                }
+            });
+        });
+    </script>
 }
-
-<h2>GetPlayerDetails</h2>
-<h2>@Model.LastName @Model.FirstName</h2>
-
-<ul>
-    <li>
-        @Model.Position
-    </li>
-    <li>
-        <img src="@Model.officialImageSrc" />
-    </li>
-</ul>
-
-

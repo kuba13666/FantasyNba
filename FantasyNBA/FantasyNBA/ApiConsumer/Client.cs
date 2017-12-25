@@ -10,11 +10,10 @@ namespace FantasyNBA.ApiConsumer
 {
     public class Client
     {
-        public Client(string lastName, string firstName)
+        public Client(int player)
         {
             _client = new HttpClient();
-            Urlplayer = "http://api.suredbits.com/nba/v0/players/" + lastName +
-"/" + firstName;
+            UrlPlayer = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/active_players.json?player=" + player;
         }
 
         private HttpClient _client;
@@ -22,7 +21,7 @@ namespace FantasyNBA.ApiConsumer
         // Set referer property  to http://www.microsoft.com .
 
         private const string Url = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/active_players.json";
-        private string Urlplayer;
+        private string UrlPlayer;
         private const string Urlstats = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?team=bos";
 
         private string _json;
@@ -37,12 +36,13 @@ namespace FantasyNBA.ApiConsumer
             _json = _httpResponse.Content.ReadAsStringAsync().Result;
             return (List<Playerentry>)(JsonConvert.DeserializeObject<RootObjectPlayers>(_json).activeplayers.playerentry);
         }
-        //public async Task<List<PlayersApi>> GetOne()
-        //{
-        //    _httpResponse = await _client.GetAsync(Urlplayer);
-        //    _json = _httpResponse.Content.ReadAsStringAsync().Result;
-        //    return JsonConvert.DeserializeObject<List<PlayersApi>>(_json);
-        //}
+        public async Task<List<Playerentry>> GetOne()
+        {
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
+            _httpResponse = await _client.GetAsync(UrlPlayer);
+            _json = _httpResponse.Content.ReadAsStringAsync().Result;
+            return (List<Playerentry>)(JsonConvert.DeserializeObject<RootObjectPlayers>(_json).activeplayers.playerentry);
+        }
         public async Task<RootObject> GetStats()
         {
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");

@@ -167,7 +167,6 @@ C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.Depe
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Microsoft.AI.Web.xml
-C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csprojResolveAssemblyReference.cache
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csproj.CoreCompileInputs.cache
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.dll
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.pdb
@@ -177,3 +176,6 @@ C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Flurl.Http.xml
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.Init.resources
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csproj.GenerateResource.Cache
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csprojResolveAssemblyReference.cache
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PlayersRemoved.resources
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PopulateMembershipTypeTable.resources

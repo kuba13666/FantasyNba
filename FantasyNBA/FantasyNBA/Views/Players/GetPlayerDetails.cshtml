@@ -1,9 +1,9 @@
 ﻿@model Int32
 <div class="summary">
     <div class="row player-summary">
-        <div class="[ small-12 / columns ]" style="position: relative;">
+        <div class="small-12" style="position: relative;">
 
-            <div class="summary__container team-color-gradient n-p [ small-12 / columns ]">
+            <div class="summary__container team-color-gradient n-p small-12">
 
                 <div class="player-summary__inner">
 
@@ -32,131 +32,232 @@
                 </div>
             </div>
 
-            <div class="player-stats n-p [ columns / small-12 ]">
-                <div class="player-stats__right n-p [ columns / medium-4 / medium-push-8 ]">
-                    <div class="player-stats__item player-stats__pts n-p [ columns / small-3 ] stats-link">
+            <div class="player-stats n-p small-12">
+                <div class="player-stats__right n-p col-md-8">
+                    <div class="player-stats__item player-stats__pts n-p col-sm-3 stats-link">
                         <!----><a>
-                            <div class="player-stats__stat-title"></div>
-                            <span class="player-stats__stat-value">21.5</span>
+                            <div class="player-stats__stat-title">PTS</div>
+                            <span class="player-stats__stat-value"></span>
                         </a><!---->
                         <!---->
                         <!---->
                     </div>
-                    <div class="player-stats__item player-stats__reb n-p [ columns / small-3 ] stats-link" ng-class="{ 'stats-link': availableStats.current }">
-                        <!----><a ng-if="availableStats.current" href="/players/traditional/?sort=REB&amp;dir=-1">
+                    <div class="player-stats__item player-stats__reb n-p col-sm-3 stats-link">
+                        <!----><a>
                             <div class="player-stats__stat-title">REB</div>
-                            <span class="player-stats__stat-value">3.5</span>
+                            <span class="player-stats__stat-value"></span>
                         </a><!---->
                         <!---->
                         <!---->
                     </div>
-                    <div class="player-stats__item player-stats__ast n-p [ columns / small-3 ] stats-link" ng-class="{ 'stats-link': availableStats.current }">
-                        <!----><a ng-if="availableStats.current" href="/players/traditional/?sort=AST&amp;dir=-1">
+                    <div class="player-stats__item player-stats__ast n-p col-sm-3 stats-link">
+                        <!----><a>
                             <div class="player-stats__stat-title">AST</div>
-                            <span class="player-stats__stat-value">5.8</span>
+                            <span class="player-stats__stat-value"></span>
                         </a><!---->
                         <!---->
                         <!---->
                     </div>
-                    <div class="player-stats__item player-stats__pie n-p [ columns / small-3 ] stats-link" ng-class="{ 'stats-link': availableStats.current }">
-                        <!----><a ng-if="availableStats.current" href="/players/advanced/?sort=PIE&amp;dir=-1">
-                            <div class="player-stats__stat-title">PIE</div>
-                            <span class="player-stats__stat-value">13.3</span>
+                    <div class="player-stats__item player-stats__blk n-p col-sm-3 stats-link">
+                        <!----><a>
+                            <div class="player-stats__stat-title">BLK</div>
+                            <span class="player-stats__stat-value"></span>
                         </a><!---->
                         <!---->
                         <!---->
                     </div>
                 </div>
-                <div class="player-stats__left n-p [ columns / medium-4 / medium-pull-4 ]">
-                    <div class="player-stats__item player-stats__height n-p stats-link columns small-3 medium-6" ng-class="availableStats.current ? 'stats-link columns small-3 medium-6' : 'columns small-4'">
-                        <!----><a ng-if="availableStats.current" href="/players/bio/?sort=PLAYER_HEIGHT_INCHES&amp;dir=1&amp;CF=PLAYER_HEIGHT_INCHES*E*">
+                <div class="player-stats__left n-p col-md-4">
+                    <div class="player-stats__item player-stats__height n-p stats-link col-md-6">
+                        <!----><a>
                             <div class="player-stats__stat-title">HT</div>
                             <span class="player-stats__stat-value">6-1</span>
                         </a><!---->
                         <!---->
                         <!---->
                     </div>
-                    <div class="player-stats__item player-stats__weight n-p stats-link columns small-3 medium-6" ng-class="availableStats.current ? 'stats-link columns small-3 medium-6' : 'columns small-4'">
-                        <!----><a ng-if="availableStats.current" href="/players/bio/?sort=PLAYER_WEIGHT&amp;dir=1&amp;CF=PLAYER_WEIGHT*E*184">
+                    <div class="player-stats__item player-stats__weight n-p stats-link columns medium-6">
+                        <!----><a>
                             <div class="player-stats__stat-title">WT</div>
-                            <span class="player-stats__stat-value">184 <span class="player-stats__lbs">lbs</span></span>
+                            <span class="player-stats__stat-value"><span class="player-stats__lbs">lbs</span></span>
                         </a><!---->
                         <!---->
                         <!---->
                     </div>
-                    <div class="player-stats__item player-stats__age n-p stats-link columns small-3 medium-6" ng-class="availableStats.current ? 'stats-link columns small-3 medium-6' : 'hide'">
-                        <!----><a ng-if="availableStats.current" href="/players/bio/#!?sort=AGE&amp;dir=1&amp;CF=AGE*E*27">
+                    <div class="player-stats__item player-stats__age n-p stats-link columns col-md-6">
+                        <!----><a>
                             <div class="player-stats__stat-title">AGE</div>
-                            <span class="player-stats__stat-value">27</span> <!----><span ng-if="playerInfo.AGE_DAYS" class="player-stats__age-days">231d</span><!---->
+                            <span class="player-stats__stat-value"></span> <!----><span class="player-stats__age-days">231d</span><!---->
                         </a><!---->
                         <!---->
                         <!----> <!---->
                     </div>
-                    <div class="player-stats__item player-stats__birthdate n-p columns small-3 medium-6" ng-class="availableStats.current ? 'columns small-3 medium-6' : 'columns small-4'">
+                    <div class="player-stats__item player-stats__birthdate n-p col-md-6">
                         <div class="player-stats__stat-title">BORN</div>
-                        <span class="player-stats__stat-value">05/08/1990</span>
+                        <span class="player-stats__stat-value"></span>
                     </div>
                 </div>
-                <div class="player-stats__middle n-p [ columns / medium-4 / medium-pull-4 ]">
-                    <div class="player-stats__item player-stats__prior n-p [ columns / small-6 / medium-12 ]">
+                <div class="player-stats__middle n-p col-sm-12">
+                    <div class="player-stats__item player-stats__prior n-p col-md-8">
                         <div class="player-stats__stat-title">PRIOR</div>
-                        <span class="player-stats__stat-value">Connecticut/USA</span>
+                        <span class="player-stats__stat-value"></span>
                     </div>
-                    <div class="player-stats__item player-stats__draft n-p [ columns / small-6 / medium-8 ] stats-link" ng-class="playerInfo.DRAFT_YEAR != 'Undrafted' ? 'stats-link' : ''">
-                        <!----><a ng-if="playerInfo.DRAFT_YEAR != 'Undrafted'" href="/draft/history/?Season=2011">
-                            <div class="player-stats__stat-title">DRAFT</div>
-                            <span class="player-stats__stat-value">2011 Rnd 1 Pick 9</span>
-                        </a><!---->
-                        <!---->
-                        <!---->
-                    </div>
-                    <div class="player-stats__item player-stats__experience n-p [ columns / medium-4 / hide-for-small-only ]">
-                        <div class="player-stats__stat-title">EXP</div>
-                        <!----><div class="player-stats__stat-value" ng-if="playerInfo.SEASON_EXP!=0">6 <span class="player-stats__exp-yrs">yrs</span></div><!---->
-                        <!---->
-                    </div>
-                </div>
-            </div>
+                    <div class="player-stats__item player-stats__draft n-p [ columns / small-6 / medium-8 ] stats-link">
 
-            <!----><div ng-if="::showAllStarBtn" class="player-summary__as-vote-btn-mobile [ show-for-small-only ]">
-                <a href="https://vote.nba.com/?mw=true&amp;iref=asv18_stats_320_33plyprof&amp;cid=asv18_stats_320_33plyprof">
-                    <img src="/media/img/NBA_ASV_Banners_Static_283X33_StatsPlayer.png" alt="NBA All-Star 2018 Vote">
-                </a>
-            </div><!---->
+                        <div class="player-stats__stat-title">PlayerID</div>
+                        <span class="player-stats__stat-value"></span>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
+
     </div>
 
-</div>
-@section scripts
+    <div id="container" style="width: 75%;">
+        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+        <canvas id="canvas" style="display: block; width: 338px; height: 169px;" width="338" height="169" class="chartjs-render-monitor"></canvas>
+    </div>
+    @section scripts
 {
-    <script>
-        $(document).ready(function () {
-        var playerImage = $(".player-img")
-            $.ajax({
-                url: "/api/players/" + @Model,
-                method: "get",
-                success: function (data) {
-                    $(".summary__container").addClass(data.team.abbreviation);
-                    $(".player-summary__team-logo").children().attr({
-                        src: '/Media/' + data.team.abbreviation + '.svg',
-                        title: data.team.name + ' logo',
-                        alt: data.team.name + ' logo',
-                        abbr: data.team.abbreviation
-                    });
-                    $(".player-summary__first-name").text(data.player.firstName);
-                    $(".player-summary__last-name").text(data.player.lastName);
-                    $(".player-summary__player-pos").text(data.player.position);
-                    $(".player-summary__team-name").text(data.team.name);
-                    $(".player-summary__hash").text(data.player.jerseyNumber);
-                    $(".player-img").attr({
-                        src: data.player.officialImageSrc,
-                        title: data.player.firstName + ' ' + data.player.lastName,
-                        alt: data.player.firstName + ' ' + data.player.lastName,
-                        'team-id': data.team.iD,
-                        'player-id': data.player.iD
+        <script>
+            $(document).ready(function () {
+                var stats;
+                var playerImage = $(".player-img")
+                $.ajax({
+                    url: "/api/players/" + @Model,
+                    method: "get",
+                    success: function (data) {
+                        $(".summary__container").addClass(data.team.abbreviation);
+                        $(".player-summary__team-logo").children().attr({
+                            src: '/Media/' + data.team.abbreviation + '.svg',
+                            title: data.team.name + ' logo',
+                            alt: data.team.name + ' logo',
+                            abbr: data.team.abbreviation
+                        });
+                        $(".player-summary__first-name").text(data.player.firstName);
+                        $(".player-summary__last-name").text(data.player.lastName);
+                        $(".player-summary__player-pos").text(data.player.position);
+                        $(".player-summary__team-name").text(data.team.name);
+                        $(".player-summary__hash").text(data.player.jerseyNumber);
+                        $(".player-img").attr({
+                            src: data.player.officialImageSrc,
+                            title: data.player.firstName + ' ' + data.player.lastName,
+                            alt: data.player.firstName + ' ' + data.player.lastName,
+                            'team-id': data.team.iD,
+                            'player-id': data.player.iD
+                        });
+                        $(".player-stats__stat-value").eq(4).text(data.player.height);
+                        $(".player-stats__stat-value").eq(5).text(data.player.weight + 'lbs');
+                        $(".player-stats__stat-value").eq(6).text(data.player.age);
+                        $(".player-stats__stat-value").eq(7).text(data.player.birthDate);
+                        $(".player-stats__stat-value").eq(8).text(data.player.birthCity + '/' + data.player.birthCountry);
+                        $(".player-stats__stat-value").eq(9).text(data.player.id);
+                    }
+                });
+                $.ajax({
+                    url: "/api/stats/" + @Model,
+                    method: "get",
+                    success: function (data) {
+                        $(".player-stats__stat-value").eq(0).text(data.stats.ptsPerGame.text);
+                        $(".player-stats__stat-value").eq(1).text(data.stats.rebPerGame.text);
+                        $(".player-stats__stat-value").eq(2).text(data.stats.astPerGame.text);
+                        $(".player-stats__stat-value").eq(3).text(data.stats.blkPerGame.text);
+                    }
+                });
+
+
+
+                @*function testAjax() {
+                    var result = "";
+                    $.ajax({
+                        url: "/api/stats/" + @Model,
+                        method: "get",
+                        success: function (data) {
+                            return (data);
+                        }
                     });
                 }
-            });
+                var dupa = $.get("/api/stats/" + @Model, function (data) {
+                    return data;
+                });*@
+
+
+                var result;
+
+                $.ajax({
+                    type: "GET",
+                    url: "/api/stats/" + @Model,
+                    datatype: "json",
+                    async: false,
+                    success: function (data) {
+                        result = data;
+                        console.log("Inside ajax: " + result);
+                    }
+                });
+
+                console.log(result); 
+             var color = Chart.helpers.color;
+             var horizontalBarChartData = {
+                 labels: ["PtsPerGame", "RebPerGame", "RebPerGame", "RebPerGame", "RebPerGame"],
+                 datasets: [{
+                     label: 'Dataset 1',
+                     backgroundColor: '#ff6384',
+                     borderColor: '#ff6384',
+                     borderWidth: 1,
+                     data: [
+                         result.stats.ptsPerGame.text,
+                         result.stats.rebPerGame.text,
+                         result.stats.astPerGame.text,
+                         result.stats.blkPerGame.text,
+                         result.stats.stlPerGame.text,
+                     ]
+                 }, {
+                     label: 'Dataset 2',
+                     backgroundColor: '#36a2eb',
+                     borderColor: '#36a2eb',
+                     data: [
+                         1,
+                         2,
+                         3,
+                         4,
+                         5,
+                         6,
+                         7
+                     ]
+                 }]
+
+             };
+
+             window.onload = function () {
+                 var ctx = document.getElementById("canvas").getContext("2d");
+                 window.myHorizontalBar = new Chart(ctx, {
+                     type: 'horizontalBar',
+                     data: horizontalBarChartData,
+                     options: {
+                         // Elements options apply to all of the options unless overridden in a dataset
+                         // In this case, we are setting the border of each horizontal bar to be 2px wide
+                         elements: {
+                             rectangle: {
+                                 borderWidth: 2,
+                             }
+                         },
+                         responsive: true,
+                         legend: {
+                             position: 'right',
+                         },
+                         title: {
+                             display: true,
+                             text: 'Chart.js Horizontal Bar Chart'
+                         }
+                     }
+                 });
+
+             };
+
+
+
         });
-    </script>
-}
+        </script>
+    }

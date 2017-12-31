@@ -76,19 +76,19 @@
                 },
                 columns: [
                     {
-                        data: "fullName",
+                        data: "player.lastName",
                         render: function (data, type, player) {
-                            return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                            return "<a href='/players/GetPlayerDetails/" + player.player.id + "'>" + player.player.lastName + ' ' + player.player.firstName + "</a>";
                         }
                     },
                     {
-                        data: "position"
+                        data: "player.position"
                     },
                     {
-                        data: "realTeam"
+                        data: "player.age"
                     },
                     {
-                        data: "id",
+                        data: "player.iD",
                         render: function (data) {
                             return "<button class='btn-link js-add' data-player-id=" + data + ">Add</button>";
                         }
@@ -124,8 +124,6 @@
                     }
                 })
             });
-
-
         });
     </script>
 }

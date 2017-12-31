@@ -203,7 +203,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConsumer\Client.cs" />
-    <Compile Include="ApiConsumer\Models\PlayersApi.cs" />
+    <Compile Include="ApiConsumer\Models\Activeplayers.cs" />
+    <Compile Include="ApiConsumer\Models\ExternalMapping.cs" />
+    <Compile Include="ApiConsumer\Models\Playerentry.cs" />
+    <Compile Include="ApiConsumer\Models\Player.cs" />
+    <Compile Include="ApiConsumer\Models\RootObjectPlayers.cs" />
+    <Compile Include="ApiConsumer\Models\Stats.cs" />
+    <Compile Include="ApiConsumer\Models\Team.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -214,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\PlayersController.cs" />
+    <Compile Include="Controllers\Api\StatsController.cs" />
     <Compile Include="Controllers\Api\TeamsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -226,6 +233,14 @@
     <Compile Include="Migrations\201712202026215_Init.cs" />
     <Compile Include="Migrations\201712202026215_Init.Designer.cs">
       <DependentUpon>201712202026215_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712311128365_PlayersRemoved.cs" />
+    <Compile Include="Migrations\201712311128365_PlayersRemoved.Designer.cs">
+      <DependentUpon>201712311128365_PlayersRemoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712311146255_PopulateMembershipTypeTable.cs" />
+    <Compile Include="Migrations\201712311146255_PopulateMembershipTypeTable.Designer.cs">
+      <DependentUpon>201712311146255_PopulateMembershipTypeTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -380,7 +395,7 @@
     <Content Include="Media\MIN.svg" />
     <Content Include="Media\NOP.svg" />
     <Content Include="Media\NYK.svg" />
-    <Content Include="Media\OKC.svg" />
+    <Content Include="Media\OKL.svg" />
     <Content Include="Media\ORL.svg" />
     <Content Include="Media\PHI.svg" />
     <Content Include="Media\PHX.svg" />
@@ -543,6 +558,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712202026215_Init.resx">
       <DependentUpon>201712202026215_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712311128365_PlayersRemoved.resx">
+      <DependentUpon>201712311128365_PlayersRemoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712311146255_PopulateMembershipTypeTable.resx">
+      <DependentUpon>201712311146255_PopulateMembershipTypeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

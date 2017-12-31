@@ -21,7 +21,7 @@
     <tbody></tbody>
 </table>
 
-@Html.ActionLink("Create new Team", "New", "Teams", new { id = Model.Id }, null);
+@Html.ActionLink("Create new Team", "New", "Teams", new { id = Model.Id }, new { @class = "btn btn-primary" })
 
 <table id="playersDataTable" class="table table-bordered table-hover">
     <thead>
@@ -39,9 +39,6 @@
 {
     <script>
         $(document).ready(function () {
-
-                
-
                 var table = $("#teamsDataTable").DataTable({
                     ajax: {
                         url: "/api/customers/" + @Model.Id,
@@ -57,8 +54,6 @@
                         }
                     ]
                 });
-
-
             $("#teamsDataTable").on("click", ".teamclass", function (e) {
                 e.preventDefault();
                 var teamClicked = $(this);
@@ -87,19 +82,12 @@
                 table2.destroy();
 
             });
-
-
             $("#playersDataTable").on("click", ".js-add", function (e) {
                 e.preventDefault();
                 var button = $(this);
                 var addedPlayer = $(this).parent().siblings(0).html(); // parentNode.parentNode.children[0].children[0];
 
             });
-
-
-
-
-
         });
     </script>
 }

@@ -67,12 +67,5 @@ namespace FantasyNBA.Controllers
                 return RedirectToAction("GetPlayers", "Players");
             }
 
-            public async Task<ActionResult> GetStatistics()
-            {
-                var client = new Client();
-                var model = await client.GetStats();
-
-                return View(model);
-            }
         }
     }

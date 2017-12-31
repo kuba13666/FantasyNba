@@ -36,24 +36,16 @@ namespace FantasyNBA.Controllers.Api
         public IHttpActionResult CreateTeam(NewTeam newTeam)
         {
             var customer = _context.Customers.Single(c => c.Id == newTeam.CustomerId);
-            
-            var players = _context.Players.Where(p => newTeam.PlayerIds.Contains(p.InternalId)).ToList();
+
+            var players = newTeam.PlayerIds;
 
             var team = new Team
             {
                 name = newTeam.name,
-                Players = players,
+                PlayerIds = players,
                 CustomerId = newTeam.CustomerId
             };
-            
-            foreach (var player in players)
-            {
-                if (player.TeamId!=null)
-                    return BadRequest("Player already assigned");
-                
-                player.TeamId = team.Id;
-                _context.Entry(player).State = EntityState.Modified;
-            }
+
             _context.Teams.Add(team);
             _context.SaveChanges();
             return Created(new Uri(Request.RequestUri + "/" + team.Id), team);

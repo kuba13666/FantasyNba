@@ -116,29 +116,6 @@ textarea {
     animation: fa-spin 2s infinite linear
 }
 
-@-webkit-keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg)
-    }
-}
-
-@keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg)
-    }
-}
 
 .fa-rotate-90 {
     -webkit-transform: rotate(90deg);
@@ -18960,11 +18937,6 @@ body.nav--fixed .stats-search {
         color: inherit
     }
 
-@media screen and (min-width: 64.0625em) {
-    .stats-team-summary__inner {
-        height: 140px
-    }
-
     .stats-team-summary__logo {
         height: 120px;
         width: 120px
@@ -18993,11 +18965,6 @@ body.nav--fixed .stats-search {
     }
 }
 
-@media screen and (max-width: 64em) {
-    .stats-team-summary__col {
-        height: 42px
-    }
-
     .stats-team-summary__header {
         top: 0
     }
@@ -19007,20 +18974,10 @@ body.nav--fixed .stats-search {
     }
 }
 
-@media screen and (max-width: 39.9375em) {
-    .stats-team-summary .stats-team-summary__sub-right .stats-team-summary__col {
-        border-top-width: 0
-    }
-
         .stats-team-summary .stats-team-summary__sub-left .stats-team-summary__col:last-child, .stats-team-summary .stats-team-summary__sub-right .stats-team-summary__col:last-child {
             border-right-width: 0
         }
 }
-
-@media screen and (min-width: 40em) {
-    .stats-team-summary .stats-team-summary__sub-right .stats-team-summary__col:first-child {
-        border-left-width: 0
-    }
 
     .stats-team-summary .stats-team-summary__sub-right .stats-team-summary__col:last-child {
         border-right-width: 0
@@ -19110,12 +19067,6 @@ body.nav--fixed .stats-search {
     transform: translateY(-50%)
 }
 
-@media only screen and (min-width: 768px) {
-    .stats-tracking-page .stats-tracking-page-toggle-btn {
-        right: 55px
-    }
-}
-
 .transactions-list__spacer {
     height: 20px;
     width: 100%;
@@ -19138,43 +19089,20 @@ body.nav--fixed .stats-search {
     padding-top: 25px
 }
 
-@media screen and (min-width: 40em) {
-    .transactions-list__container {
-        height: 100px;
-        padding-top: 0
-    }
-}
-
 .transactions-list__link-container {
     padding-top: 25px
 }
 
-@media screen and (max-width: 39.9375em) {
-    .transactions-list__link-container {
-        padding: 0
-    }
-}
 
 .transactions-list__link-container a {
     display: block
 }
 
-@media screen and (max-width: 64em) {
-    .transactions-list__link-container a {
-        font-size: .7em
-    }
-}
 
 .transactions-list__description {
     font-size: .6875rem
 }
 
-@media screen and (min-width: 40em) {
-    .transactions-list__description {
-        padding-top: 27px;
-        font-size: 1em
-    }
-}
 
 .transactions-list .first {
     display: none
@@ -19184,32 +19112,14 @@ body.nav--fixed .stats-search {
     width: 50px
 }
 
-@media screen and (min-width: 40em) {
-    .transactions-list .team-logo {
-        width: 75px;
-        padding-top: 15px
-    }
-}
 
-@media screen and (min-width: 64.0625em) {
-    .transactions-list .team-logo {
-        width: 90px;
-        padding-top: 5px
-    }
-}
 
 .transactions-list .player-logo {
     height: 99px;
     width: auto
 }
 
-@media screen and (max-width: 39.9375em) {
-    .transactions-list .player-logo {
-        height: 72px;
-        position: relative;
-        bottom: 14px
-    }
-}
+
 
 .transactions-list .button {
     text-transform: uppercase;
@@ -19249,4 +19159,17 @@ body.nav--fixed .stats-search {
     margin-bottom: 10px;
     padding: 20px;
     border-bottom: 1px solid #be9d53
+}
+
+.small-12 {
+    width: 100%;
+}
+
+.medium-push-8 {
+    position: relative;
+    left: 66.66667%;
+}
+
+.medium-4 {
+    width: 33.33333%;
 }

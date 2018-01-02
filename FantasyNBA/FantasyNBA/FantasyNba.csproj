@@ -206,6 +206,7 @@
     <Compile Include="ApiConsumer\Models\Activeplayers.cs" />
     <Compile Include="ApiConsumer\Models\Cumulativeplayerstats.cs" />
     <Compile Include="ApiConsumer\Models\ExternalMapping.cs" />
+    <Compile Include="ApiConsumer\Models\Gamelog.cs" />
     <Compile Include="ApiConsumer\Models\GamesPlayed.cs" />
     <Compile Include="ApiConsumer\Models\Playerentry.cs" />
     <Compile Include="ApiConsumer\Models\Player.cs" />
@@ -270,7 +271,7 @@
     <Compile Include="Models\NewTeam.cs" />
     <Compile Include="Models\DTOs\PlayerDTO.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Stats.cs" />
+    <Compile Include="Models\StatsWithGameLogs.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\TeamPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

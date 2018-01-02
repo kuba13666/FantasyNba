@@ -160,10 +160,10 @@
                     url: "/api/stats/" + @Model,
                     method: "get",
                     success: function (data) {
-                        $(".player-stats__stat-value").eq(0).text(data.stats.ptsPerGame.text);
-                        $(".player-stats__stat-value").eq(1).text(data.stats.rebPerGame.text);
-                        $(".player-stats__stat-value").eq(2).text(data.stats.astPerGame.text);
-                        $(".player-stats__stat-value").eq(3).text(data.stats.blkPerGame.text);
+                        $(".player-stats__stat-value").eq(0).text(data.statsEntry.stats.ptsPerGame.text);
+                        $(".player-stats__stat-value").eq(1).text(data.statsEntry.stats.rebPerGame.text);
+                        $(".player-stats__stat-value").eq(2).text(data.statsEntry.stats.astPerGame.text);
+                        $(".player-stats__stat-value").eq(3).text(data.statsEntry.stats.blkPerGame.text);
                     }
                 });
 
@@ -200,31 +200,29 @@
                 console.log(result); 
              var color = Chart.helpers.color;
              var horizontalBarChartData = {
-                 labels: ["PtsPerGame", "RebPerGame", "RebPerGame", "RebPerGame", "RebPerGame"],
+                 labels: ["PtsPerGame", "RebPerGame", "astPerGame", "stlPerGame", "blkPerGame"],
                  datasets: [{
                      label: 'Season',
                      backgroundColor: '#ff6384',
                      borderColor: '#ff6384',
                      borderWidth: 1,
                      data: [
-                         result.stats.ptsPerGame.text,
-                         result.stats.rebPerGame.text,
-                         result.stats.astPerGame.text,
-                         result.stats.blkPerGame.text,
-                         result.stats.stlPerGame.text,
+                         result.statsEntry.stats.ptsPerGame.text,
+                         result.statsEntry.stats.rebPerGame.text,
+                         result.statsEntry.stats.astPerGame.text,
+                         result.statsEntry.stats.blkPerGame.text,
+                         result.statsEntry.stats.stlPerGame.text,
                      ]
                  }, {
                      label: 'Last 5 games',
                      backgroundColor: '#36a2eb',
                      borderColor: '#36a2eb',
                      data: [
-                         1,
-                         2,
-                         3,
-                         4,
-                         5,
-                         6,
-                         7
+                         result.ptsPerGame,
+                         result.rebPerGame,
+                         result.astPerGame,
+                         result.stlPerGame,
+                         result.blkPerGame
                      ]
                  }]
 

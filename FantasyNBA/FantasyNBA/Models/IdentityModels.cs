@@ -21,7 +21,7 @@ namespace FantasyNBA.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Player> Players { get; set; }
+        public DbSet<TeamPlayer> TeamPlayers { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Team> Teams { get; set; }
         public ApplicationDbContext()

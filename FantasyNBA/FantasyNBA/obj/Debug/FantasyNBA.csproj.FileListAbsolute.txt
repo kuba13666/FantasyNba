@@ -179,3 +179,6 @@ C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.csprojResolveAssemblyReference.cache
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PlayersRemoved.resources
 C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.PopulateMembershipTypeTable.resources
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddTeamPlayer.resources
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.externalIdToString.resources
+C:\Users\enco\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.externalIdToInt.resources

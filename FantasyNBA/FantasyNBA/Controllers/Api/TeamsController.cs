@@ -1,10 +1,12 @@
-﻿using FantasyNBA.Models;
+﻿using FantasyNBA.ApiConsumer;
+using FantasyNBA.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace FantasyNBA.Controllers.Api
@@ -19,15 +21,18 @@ namespace FantasyNBA.Controllers.Api
         }
 
 
-        public IHttpActionResult GetTeamsPlayers(int id)
+        public async Task<IHttpActionResult> GetTeamsPlayers(int id)
         {
             var team = _context.Teams.SingleOrDefault(x => x.Id == id);
             if (team == null)
             {
                 return NotFound();
             }
-            var players = _context.Players.Include(path=>path.Position).Where(x => x.TeamId == team.Id);
-            return Ok(players);
+            var client = new Client();
+            var players = await client.GetAll();
+            var playersIds = _context.TeamPlayers.Where(p => p.TeamId == id).Select(t=>t.ExternalId).ToList();
+            var players2 = players.Where(p=>playersIds.Contains(p.player.ID));
+            return Ok(players2);
         }
 
 
@@ -42,11 +47,22 @@ namespace FantasyNBA.Controllers.Api
             var team = new Team
             {
                 name = newTeam.name,
-                PlayerIds = players,
                 CustomerId = newTeam.CustomerId
             };
-
             _context.Teams.Add(team);
+            _context.SaveChanges();
+
+            foreach (var item in newTeam.PlayerIds)
+            {
+                var player = new TeamPlayer()
+                {
+                    ExternalId = item,
+                    TeamId = team.Id
+                };
+                _context.TeamPlayers.Add(player);
+            }
+
+
             _context.SaveChanges();
             return Created(new Uri(Request.RequestUri + "/" + team.Id), team);
         }

@@ -9,7 +9,7 @@ namespace FantasyNBA.Models
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public List<int> PlayerIds { get; set; }
+        public List<TeamPlayer> TeamPlayers { get; set; }
         public int CustomerId { get; set; }
     }
 }

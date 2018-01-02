@@ -57,7 +57,7 @@
             $("#teamsDataTable").on("click", ".teamclass", function (e) {
                 e.preventDefault();
                 var teamClicked = $(this);
-                    
+                var check = teamClicked.attr("data-team-id")
                 var table2 = $("#playersDataTable").DataTable({
                     ajax: {
                         url: "/api/teams/" + teamClicked.attr("data-team-id"),
@@ -66,16 +66,16 @@
                     columns:
                     [
                         {
-                            data: "fullName",
+                            data: "player.lastName",
                             render: function (data, type, player) {
-                                return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.fullName + "</a>";
+                                return "<a href='/players/GetPlayerDetails/" + player.player.id + "'>" + player.player.lastName + ' ' + player.player.firstName + "</a>";
                             }
                         },
                         {
-                            data: "position.name"
+                            data: "player.position"
                         },
                         {
-                            data: "realTeam"
+                            data: "player.age"
                         }
                     ]
                 });

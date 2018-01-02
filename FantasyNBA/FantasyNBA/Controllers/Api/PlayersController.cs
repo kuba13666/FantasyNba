@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace FantasyNBA.Controllers.Api
+namespace FantasyNba.Controllers.Api
 {
     public class PlayersController : ApiController
     {

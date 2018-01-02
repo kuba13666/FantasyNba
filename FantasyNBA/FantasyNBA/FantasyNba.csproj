@@ -204,11 +204,17 @@
   <ItemGroup>
     <Compile Include="ApiConsumer\Client.cs" />
     <Compile Include="ApiConsumer\Models\Activeplayers.cs" />
+    <Compile Include="ApiConsumer\Models\Cumulativeplayerstats.cs" />
     <Compile Include="ApiConsumer\Models\ExternalMapping.cs" />
+    <Compile Include="ApiConsumer\Models\GamesPlayed.cs" />
     <Compile Include="ApiConsumer\Models\Playerentry.cs" />
     <Compile Include="ApiConsumer\Models\Player.cs" />
+    <Compile Include="ApiConsumer\Models\PlayerShort.cs" />
+    <Compile Include="ApiConsumer\Models\Playerstatsentry.cs" />
     <Compile Include="ApiConsumer\Models\RootObjectPlayers.cs" />
+    <Compile Include="ApiConsumer\Models\RootObjectStats.cs" />
     <Compile Include="ApiConsumer\Models\Stats.cs" />
+    <Compile Include="ApiConsumer\Models\StatsObject.cs" />
     <Compile Include="ApiConsumer\Models\Team.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />

@@ -5,28 +5,6 @@ using System.Web;
 
 namespace FantasyNba.ApiConsumer.Models
 {
-    public class PlayerShort
-    {
-        public string ID { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string JerseyNumber { get; set; }
-        public string Position { get; set; }
-    }
-
-    public class GamesPlayed
-    {
-        public string abbreviation { get; set; }
-        public string text { get; set; }
-    }
-
-    public class StatsObject
-    {
-        public string category { get; set; }
-        public string abbreviation { get; set; }
-        public string text { get; set; }
-    }
-
     public class Stats
     {
         public GamesPlayed GamesPlayed { get; set; }
@@ -95,23 +73,4 @@ namespace FantasyNba.ApiConsumer.Models
         public StatsObject MinSecondsPerGame { get; set; }
         public StatsObject GamesStarted { get; set; }
     }
-
-    public class Playerstatsentry
-    {
-        public PlayerShort player { get; set; }
-        public Team team { get; set; }
-        public Stats stats { get; set; }
-    }
-
-    public class Cumulativeplayerstats
-    {
-        public string lastUpdatedOn { get; set; }
-        public IList<Playerstatsentry> playerstatsentry { get; set; }
-    }
-
-    public class RootObjectStats
-    {
-        public Cumulativeplayerstats cumulativeplayerstats { get; set; }
-    }
-
 }

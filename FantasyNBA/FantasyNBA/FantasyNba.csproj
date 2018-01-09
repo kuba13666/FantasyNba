@@ -276,6 +276,7 @@
     <Compile Include="Models\TeamPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TrieStructure\Trie.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\PlayerViewModel.cs" />
   </ItemGroup>
@@ -558,6 +559,7 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Teams\New.cshtml" />
     <Content Include="Views\Players\GetStatistics.cshtml" />
+    <Content Include="Views\Players\GetTrieAsync.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

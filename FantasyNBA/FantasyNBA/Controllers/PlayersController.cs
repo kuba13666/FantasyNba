@@ -1,6 +1,7 @@
 ﻿using FantasyNba.ApiConsumer;
 using FantasyNBA.ApiConsumer;
 using FantasyNBA.Models;
+using FantasyNBA.TrieStructure;
 using FantasyNBA.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,23 @@ namespace FantasyNBA.Controllers
             return View(id);
         }
 
+
+        public async Task<ActionResult> GetTrieAsync()
+        {
+            var client = new Client();
+            var players = await client.GetAll();
+            Tries t = new Tries();
+            t.CreateRoot();
+            foreach (var player in players)
+            {
+                var fullName = player.player.FirstName + player.player.LastName;
+                t.Add(fullName.ToCharArray(), player);
+            }
+            
+
+            var player1 = t.FindPlayer("LebronJames".ToCharArray());
+            return View(player1.player);
+        }
         //public async Task<ActionResult> DownloadPlayerList()
         //{
         //    var client = new Client();
@@ -67,5 +85,6 @@ namespace FantasyNBA.Controllers
         //        return RedirectToAction("GetPlayers", "Players");
         //    }
 
-        }
+
     }
+}

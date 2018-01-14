@@ -24,6 +24,7 @@ namespace FantasyNBA.Models
         public DbSet<TeamPlayer> TeamPlayers { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<League> Leagues { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

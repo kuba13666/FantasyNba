@@ -1,4 +1,5 @@
 ﻿using FantasyNBA.Models;
+using FantasyNBA.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,12 @@ namespace FantasyNBA.Controllers
         public ActionResult New(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-            return View(customer);
+            var customerViewModel = new CustomerViewModel()
+            {
+                Customer = customer,
+                Leagues = _context.Leagues.ToList()
+            };
+            return View(customerViewModel);
 
         }
     }

@@ -11,5 +11,6 @@ namespace FantasyNBA.Models
         public string name { get; set; }
         public List<TeamPlayer> TeamPlayers { get; set; }
         public int CustomerId { get; set; }
+        public League League { get; set; }
     }
 }

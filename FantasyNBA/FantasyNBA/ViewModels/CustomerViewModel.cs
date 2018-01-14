@@ -9,6 +9,7 @@ namespace FantasyNBA.ViewModels
     public class CustomerViewModel
     {
         public List<MembershipType> MembershipTypes { get; set; }
+        public List<League> Leagues { get; set; }
         public Customer Customer { get; set; }
     }
 }

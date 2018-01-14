@@ -274,3 +274,4 @@ C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.Gamelog.resources
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddingStatsToPlayer.resources
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddingPlayerScore.resources
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddingLeague.resources

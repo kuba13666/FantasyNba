@@ -1,12 +1,9 @@
 ﻿using FantasyNBA.ApiConsumer;
 using FantasyNBA.DateTimeExtension;
+using FantasyNBA.Interfaces;
 using FantasyNBA.Models;
 using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -15,10 +12,12 @@ namespace FantasyNBA.Controllers.Api
     public class TeamsController : ApiController
     {
         private ApplicationDbContext _context;
+        private IRootObjectPlayerGameLog _gamelogs;
 
-        public TeamsController()
+        public TeamsController(IRootObjectPlayerGameLog gamelogs)
         {
             _context = new ApplicationDbContext();
+            _gamelogs = gamelogs;
         }
 
 
@@ -30,10 +29,9 @@ namespace FantasyNBA.Controllers.Api
                 return NotFound();
             }
             var client = new Client();
-            //var players = await client.GetAll();
             var teamPlayers = _context.TeamPlayers.Where(p => p.TeamId == id);
-            //var players2 = players.Where(p=>playersIds.Contains(p.player.ID));
             var firstdayOfThisWeek = DateTime.Now.FirstDayOfWeek();
+            //var playersGameLogs = await client.GetPlayerGameLog(date);
             foreach (var player in teamPlayers)
             {
                 var playerGameLog = await client.GetPlayerGameLog(player.ExternalId);

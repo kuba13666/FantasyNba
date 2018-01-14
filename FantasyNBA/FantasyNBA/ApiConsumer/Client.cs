@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Net.Http.Headers;
 using System.Collections.Generic;
 using FantasyNBA.Models;
+using System;
 
 namespace FantasyNBA.ApiConsumer
 {
@@ -56,6 +57,15 @@ namespace FantasyNBA.ApiConsumer
         public async Task<Playergamelogs> GetPlayerGameLog(int player)
         {
             UrlPlayerGameLog = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?player=" + player;
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
+            _httpResponse = await _client.GetAsync(UrlPlayerGameLog);
+            _json = _httpResponse.Content.ReadAsStringAsync().Result;
+            var replacedJson = _json.Replace("@category", "category").Replace("@abbreviation", "abbreviation").Replace("#text", "text");
+            return (JsonConvert.DeserializeObject<RootObjectPlayerGameLog>(replacedJson).playergamelogs);
+        }
+        public async Task<Playergamelogs> GetPlayerGameLog(string data)
+        {
+            UrlPlayerGameLog = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?data=" + data;
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
             _httpResponse = await _client.GetAsync(UrlPlayerGameLog);
             _json = _httpResponse.Content.ReadAsStringAsync().Result;

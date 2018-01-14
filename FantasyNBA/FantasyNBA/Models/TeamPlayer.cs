@@ -13,5 +13,10 @@ namespace FantasyNBA.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Pts { get; set; }
+        public int Reb { get; set; }
+        public int Ast { get; set; }
+        public int Stl { get; set; }
+        public int Blk { get; set; }
+        public int PlayerScore { get; set; }
     }
 }

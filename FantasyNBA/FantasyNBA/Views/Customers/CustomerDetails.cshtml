@@ -15,7 +15,6 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Id</th>
         </tr>
     </thead>
     <tbody></tbody>
@@ -27,8 +26,12 @@
     <thead>
         <tr>
             <th>Player</th>
-            <th>Position</th>
-            <th>Team</th>
+            <th>Pts</th>
+            <th>Reb</th>
+            <th>Ast</th>
+            <th>Stl</th>
+            <th>Blk</th>
+            <th>PlayerScore</th>
         </tr>
     </thead>
     <tbody></tbody>
@@ -68,11 +71,26 @@
                         {
                             data: "lastName",
                             render: function (data, type, player) {
-                                return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.lastName + ' ' + player.firstName + "</a>";
+                                return "<a href='/players/GetPlayerDetails/" + player.externalId + "'>" + player.lastName + ' ' + player.firstName + "</a>";
                             }
                         },
                         {
                             data: "pts"
+                        },
+                        {
+                            data: "reb"
+                        },
+                        {
+                            data: "ast"
+                        },
+                        {
+                            data: "stl"
+                        },
+                        {
+                            data: "blk"
+                        },
+                        {
+                            data: "playerScore"
                         }
                     ]
                 });

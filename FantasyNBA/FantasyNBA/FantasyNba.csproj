@@ -234,6 +234,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="DateTimeExtension\DateTimeExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -260,6 +261,18 @@
     <Compile Include="Migrations\201801021151553_externalIdToInt.cs" />
     <Compile Include="Migrations\201801021151553_externalIdToInt.Designer.cs">
       <DependentUpon>201801021151553_externalIdToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801140840495_Gamelog.cs" />
+    <Compile Include="Migrations\201801140840495_Gamelog.Designer.cs">
+      <DependentUpon>201801140840495_Gamelog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801140938361_AddingStatsToPlayer.cs" />
+    <Compile Include="Migrations\201801140938361_AddingStatsToPlayer.Designer.cs">
+      <DependentUpon>201801140938361_AddingStatsToPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801140954438_AddingPlayerScore.cs" />
+    <Compile Include="Migrations\201801140954438_AddingPlayerScore.Designer.cs">
+      <DependentUpon>201801140954438_AddingPlayerScore.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -595,6 +608,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801021151553_externalIdToInt.resx">
       <DependentUpon>201801021151553_externalIdToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801140840495_Gamelog.resx">
+      <DependentUpon>201801140840495_Gamelog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801140938361_AddingStatsToPlayer.resx">
+      <DependentUpon>201801140938361_AddingStatsToPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801140954438_AddingPlayerScore.resx">
+      <DependentUpon>201801140954438_AddingPlayerScore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

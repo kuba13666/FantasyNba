@@ -29,10 +29,20 @@ namespace FantasyNBA.Controllers.Api
                 return NotFound();
             }
             var client = new Client();
-            var players = await client.GetAll();
-            var playersIds = _context.TeamPlayers.Where(p => p.TeamId == id).Select(t=>t.ExternalId).ToList();
-            var players2 = players.Where(p=>playersIds.Contains(p.player.ID));
-            return Ok(players2);
+            //var players = await client.GetAll();
+            var teamPlayers = _context.TeamPlayers.Where(p => p.TeamId == id);
+            //var players2 = players.Where(p=>playersIds.Contains(p.player.ID));
+            foreach (var player in teamPlayers)
+            {
+                var playerGameLog = await client.GetPlayerGameLog(player.ExternalId);
+                player.FirstName = playerGameLog.gamelogs[0].player.FirstName;
+                player.LastName = playerGameLog.gamelogs[0].player.LastName;
+                player.Pts = playerGameLog.gamelogs.Sum(g => Convert.ToInt32(g.stats.Pts));
+            }
+            _context.SaveChanges();
+
+
+            return Ok(teamPlayers);
         }
 
 

@@ -21,7 +21,7 @@ namespace FantasyNBA.Controllers.Api
                 return NotFound();
             }
             var playerStatsEntry = playerStatsObject.FirstOrDefault();
-            var playerGameLog = await client.GetPlayerGameLog();
+            var playerGameLog = await client.GetPlayerGameLog(id);
             var lastFiveGames = playerGameLog.gamelogs.OrderBy(g => g.game.date).Take(5).ToList();
             int _pts = 0;
             int _reb = 0;

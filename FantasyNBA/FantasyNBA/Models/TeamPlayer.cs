@@ -10,5 +10,8 @@ namespace FantasyNBA.Models
         public int Id { get; set; }
         public int ExternalId { get; set; }
         public int TeamId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Pts { get; set; }
     }
 }

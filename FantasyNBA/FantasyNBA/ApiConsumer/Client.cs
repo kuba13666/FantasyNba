@@ -15,7 +15,7 @@ namespace FantasyNBA.ApiConsumer
             _client = new HttpClient();
             UrlPlayer = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/active_players.json?player=" + player;
             UrlPlayerStats = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/cumulative_player_stats.json?player=" + player;
-            UrlPlayerGameLog = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?player=" + player;
+
         }
 
         private HttpClient _client;
@@ -53,8 +53,9 @@ namespace FantasyNBA.ApiConsumer
             var replacedJson = _json.Replace("@category", "category").Replace("@abbreviation", "abbreviation").Replace("#text", "text");
             return (List<Playerstatsentry>)(JsonConvert.DeserializeObject<RootObjectStats>(replacedJson).cumulativeplayerstats.playerstatsentry);
         }
-        public async Task<Playergamelogs> GetPlayerGameLog()
+        public async Task<Playergamelogs> GetPlayerGameLog(int player)
         {
+            UrlPlayerGameLog = "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-2018-regular/player_gamelogs.json?player=" + player;
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "a3ViYTEzNjphbndpbDE=");
             _httpResponse = await _client.GetAsync(UrlPlayerGameLog);
             _json = _httpResponse.Content.ReadAsStringAsync().Result;

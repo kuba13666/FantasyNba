@@ -66,16 +66,13 @@
                     columns:
                     [
                         {
-                            data: "player.lastName",
+                            data: "lastName",
                             render: function (data, type, player) {
-                                return "<a href='/players/GetPlayerDetails/" + player.player.id + "'>" + player.player.lastName + ' ' + player.player.firstName + "</a>";
+                                return "<a href='/players/GetPlayerDetails/" + player.id + "'>" + player.lastName + ' ' + player.firstName + "</a>";
                             }
                         },
                         {
-                            data: "player.position"
-                        },
-                        {
-                            data: "player.age"
+                            data: "pts"
                         }
                     ]
                 });

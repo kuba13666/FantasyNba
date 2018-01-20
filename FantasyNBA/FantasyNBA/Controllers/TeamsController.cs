@@ -16,6 +16,7 @@ namespace FantasyNBA.Controllers
         public TeamsController()
         {
             _context = new ApplicationDbContext();
+
         }
         // GET: Teams
         public ActionResult New(int id)

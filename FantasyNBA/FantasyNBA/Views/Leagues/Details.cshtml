@@ -21,7 +21,42 @@
 
     </dl>
 </div>
+<table id="teamsDataTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+                var table = $("#teamsDataTable").DataTable({
+                    ajax: {
+                        url: "/api/leagues/" + @Model.Id,
+                        dataSrc: ""
+                    },
+                    columns:
+                    [
+                        {
+                            data: "name",
+                            render: function (data, type, team) {
+                                return "<a class='teamclass' data-team-id=" + team.id + ">" + team.name + "</a>";
+                            }
+                        },
+                        {
+                            data: "score"
+                        }
+                    ]
+                });
+        });
+    </script>
+}

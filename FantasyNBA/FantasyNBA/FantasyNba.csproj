@@ -246,6 +246,7 @@
     <Compile Include="BussinessLogic\GameLogs.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\LeaguesController.cs" />
     <Compile Include="Controllers\Api\PlayersController.cs" />
     <Compile Include="Controllers\Api\StatsController.cs" />
     <Compile Include="Controllers\Api\TeamsController.cs" />
@@ -299,6 +300,10 @@
     <Compile Include="Migrations\201801141112463_AddingLeague.cs" />
     <Compile Include="Migrations\201801141112463_AddingLeague.Designer.cs">
       <DependentUpon>201801141112463_AddingLeague.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801201126472_AddTeamScoreProperty.cs" />
+    <Compile Include="Migrations\201801201126472_AddTeamScoreProperty.Designer.cs">
+      <DependentUpon>201801201126472_AddTeamScoreProperty.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -652,6 +657,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801141112463_AddingLeague.resx">
       <DependentUpon>201801141112463_AddingLeague.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801201126472_AddTeamScoreProperty.resx">
+      <DependentUpon>201801201126472_AddTeamScoreProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

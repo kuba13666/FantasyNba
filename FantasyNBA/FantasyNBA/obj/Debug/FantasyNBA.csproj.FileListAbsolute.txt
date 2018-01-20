@@ -275,3 +275,11 @@ C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddingStatsToPlayer.resources
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddingPlayerScore.resources
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddingLeague.resources
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.dll
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.Web.Common.dll
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.Web.Mvc.dll
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\WebActivatorEx.dll
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.xml
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.Web.Common.xml
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.Web.Mvc.xml
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddTeamScoreProperty.resources

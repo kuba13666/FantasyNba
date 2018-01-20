@@ -19,7 +19,10 @@ namespace FantasyNBA.Controllers.Api
             _context = new ApplicationDbContext();
             _gamelogs = gamelogs;
         }
-
+        public TeamsController()
+        {
+            _context = new ApplicationDbContext();
+        }
 
         public async Task<IHttpActionResult> GetTeamsPlayers(int id)
         {

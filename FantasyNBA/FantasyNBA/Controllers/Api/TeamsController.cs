@@ -1,6 +1,5 @@
 ﻿using FantasyNBA.ApiConsumer;
 using FantasyNBA.DateTimeExtension;
-using FantasyNBA.Interfaces;
 using FantasyNBA.Models;
 using System;
 using System.Linq;
@@ -12,13 +11,6 @@ namespace FantasyNBA.Controllers.Api
     public class TeamsController : ApiController
     {
         private ApplicationDbContext _context;
-        private IRootObjectPlayerGameLog _gamelogs;
-
-        public TeamsController(IRootObjectPlayerGameLog gamelogs)
-        {
-            _context = new ApplicationDbContext();
-            _gamelogs = gamelogs;
-        }
         public TeamsController()
         {
             _context = new ApplicationDbContext();
@@ -34,27 +26,24 @@ namespace FantasyNBA.Controllers.Api
             var client = new Client();
             var teamPlayers = _context.TeamPlayers.Where(p => p.TeamId == id);
             var firstdayOfThisWeek = DateTime.Now.FirstDayOfWeek();
-            //var playersGameLogs = await client.GetPlayerGameLog(date);
+            var playerIds = teamPlayers.Select(i => i.ExternalId).ToArray();
+            var playersGameLogs = await client.GetPlayerGameLog(playerIds);
             foreach (var player in teamPlayers)
             {
-                var playerGameLog = await client.GetPlayerGameLog(player.ExternalId);
-                player.FirstName = playerGameLog.gamelogs[0].player.FirstName;
-                player.LastName = playerGameLog.gamelogs[0].player.LastName;
-                player.Pts = playerGameLog.gamelogs.Where(x => DateTime.Parse(x.game.date) >= firstdayOfThisWeek).Sum(g => Convert.ToInt32(g.stats.Pts.text));
-                player.Reb = playerGameLog.gamelogs.Where(x => DateTime.Parse(x.game.date) >= firstdayOfThisWeek).Sum(g => Convert.ToInt32(g.stats.Reb.text));
-                player.Ast = playerGameLog.gamelogs.Where(x => DateTime.Parse(x.game.date) >= firstdayOfThisWeek).Sum(g => Convert.ToInt32(g.stats.Ast.text));
-                player.Stl = playerGameLog.gamelogs.Where(x => DateTime.Parse(x.game.date) >= firstdayOfThisWeek).Sum(g => Convert.ToInt32(g.stats.Stl.text));
-                player.Blk = playerGameLog.gamelogs.Where(x => DateTime.Parse(x.game.date) >= firstdayOfThisWeek).Sum(g => Convert.ToInt32(g.stats.Blk.text));
+                var localGameLog = playersGameLogs.gamelogs.Where(x => DateTime.Parse(x.game.date) >= firstdayOfThisWeek).Where(p => Convert.ToInt32(p.player.ID) == player.ExternalId).ToList();
+                player.FirstName = localGameLog[0].player.FirstName;
+                player.LastName = localGameLog[0].player.LastName;
+                player.Pts = localGameLog.Sum(g => Convert.ToInt32(g.stats.Pts.text));
+                player.Reb = localGameLog.Sum(g => Convert.ToInt32(g.stats.Reb.text));
+                player.Ast = localGameLog.Sum(g => Convert.ToInt32(g.stats.Ast.text));
+                player.Stl = localGameLog.Sum(g => Convert.ToInt32(g.stats.Stl.text));
+                player.Blk = localGameLog.Sum(g => Convert.ToInt32(g.stats.Blk.text));
                 player.PlayerScore = player.Pts + player.Reb + player.Ast + player.Stl + player.Blk;
             }
             _context.SaveChanges();
-
-
             return Ok(teamPlayers);
         }
-
-
-
+        
         [HttpPost]
         public IHttpActionResult CreateTeam(NewTeam newTeam)
         {

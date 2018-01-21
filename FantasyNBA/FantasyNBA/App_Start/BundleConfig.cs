@@ -32,7 +32,9 @@ namespace FantasyNBA
                       "~/Content/bootstrap.css",
                       "~/content/datatables/css/datatables.bootstrap.css",
                       "~/Content/Site.css",
-                       "~/Content/typeahead.css"
+                       "~/Content/typeahead.css",
+                       "~/Content/font-awesome.css",
+                       "~/Content/font-awesome.min.css"
                       ));
         }
     }

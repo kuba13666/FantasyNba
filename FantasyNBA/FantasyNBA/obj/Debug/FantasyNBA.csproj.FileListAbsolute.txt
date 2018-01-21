@@ -283,3 +283,4 @@ C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.xml
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.Web.Common.xml
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\bin\Ninject.Web.Mvc.xml
 C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddTeamScoreProperty.resources
+C:\Users\RENT\Source\Repos\Portfolio\FantasyNBA\FantasyNBA\obj\Debug\FantasyNBA.Migrations.AddUserToCustomer.resources

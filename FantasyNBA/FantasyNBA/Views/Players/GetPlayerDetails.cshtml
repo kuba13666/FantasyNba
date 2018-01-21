@@ -107,18 +107,20 @@
                         <div class="player-stats__stat-title">PlayerID</div>
                         <span class="player-stats__stat-value"></span>
                     </div>
-
+                    
                 </div>
 
             </div>
         </div>
 
     </div>
+    
 
     <div id="container" style="width: 75%;">
         <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
         <canvas id="canvas" style="display: block; width: 338px; height: 169px;" width="338" height="169" class="chartjs-render-monitor"></canvas>
     </div>
+
     @section scripts
 {
         <script>
@@ -166,22 +168,6 @@
                         $(".player-stats__stat-value").eq(3).text(data.statsEntry.stats.blkPerGame.text);
                     }
                 });
-
-
-
-                @*function testAjax() {
-                    var result = "";
-                    $.ajax({
-                        url: "/api/stats/" + @Model,
-                        method: "get",
-                        success: function (data) {
-                            return (data);
-                        }
-                    });
-                }
-                var dupa = $.get("/api/stats/" + @Model, function (data) {
-                    return data;
-                });*@
 
 
                 var result;

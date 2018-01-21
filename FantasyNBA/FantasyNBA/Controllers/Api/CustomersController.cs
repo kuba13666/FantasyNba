@@ -1,4 +1,5 @@
 ﻿using FantasyNBA.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,7 +21,9 @@ namespace FantasyNBA.Controllers.Api
         //Get /api/customers
         public IHttpActionResult GetCustomers()
         {
-            var customers = _context.Customers
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = _context.Users.FirstOrDefault(x => x.Id == currentUserId);
+            var customers = _context.Customers.Where(c=>c.User.Email==currentUser.Email)
                 .Include(t => t.Team)
                 .Include(m=>m.MembershipType)
                 .ToList();

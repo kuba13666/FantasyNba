@@ -17,5 +17,6 @@ namespace FantasyNBA.Models
         public byte MembershipTypeId { get; set; }
         public DateTime? Birthdate { get; set; }
         public List<Team> Team { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

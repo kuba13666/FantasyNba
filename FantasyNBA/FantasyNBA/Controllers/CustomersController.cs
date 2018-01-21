@@ -6,9 +6,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using FantasyNBA.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace FantasyNBA.Controllers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         private ApplicationDbContext _context;
@@ -48,6 +50,9 @@ namespace FantasyNBA.Controllers
         public ActionResult SaveCustomer(CustomerViewModel viewModel)
         {
             Customer customer = viewModel.Customer;
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = _context.Users.FirstOrDefault(x => x.Id == currentUserId);
+            customer.User = currentUser;
             if (customer.Id==0)
             {
                 _context.Customers.Add(customer);

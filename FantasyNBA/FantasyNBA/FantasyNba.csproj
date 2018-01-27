@@ -306,6 +306,10 @@
     <Compile Include="Migrations\201801210850279_AddUserToCustomer.Designer.cs">
       <DependentUpon>201801210850279_AddUserToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801271304214_seedingDatabase.cs" />
+    <Compile Include="Migrations\201801271304214_seedingDatabase.Designer.cs">
+      <DependentUpon>201801271304214_seedingDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -619,6 +623,7 @@
     <Content Include="Views\Leagues\Details.cshtml" />
     <Content Include="Views\Leagues\Edit.cshtml" />
     <Content Include="Views\Leagues\Index.cshtml" />
+    <Content Include="Views\Leagues\ReadOnlyIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -672,6 +677,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801210850279_AddUserToCustomer.resx">
       <DependentUpon>201801210850279_AddUserToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801271304214_seedingDatabase.resx">
+      <DependentUpon>201801271304214_seedingDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

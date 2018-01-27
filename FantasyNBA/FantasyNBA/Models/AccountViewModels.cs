@@ -64,9 +64,6 @@ namespace FantasyNBA.Models
 
     public class RegisterViewModel
     {
-        [Required]
-        [Display(Name = "UserName")]
-        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]

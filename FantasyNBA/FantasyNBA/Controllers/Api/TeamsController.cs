@@ -54,7 +54,8 @@ namespace FantasyNBA.Controllers.Api
             var team = new Team
             {
                 name = newTeam.name,
-                CustomerId = newTeam.CustomerId
+                CustomerId = newTeam.CustomerId,
+                League = _context.Leagues.Where(x=>x.Id == newTeam.League).FirstOrDefault()
             };
             _context.Teams.Add(team);
             _context.SaveChanges();

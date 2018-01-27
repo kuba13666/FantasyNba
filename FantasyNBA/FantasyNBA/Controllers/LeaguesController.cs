@@ -17,7 +17,11 @@ namespace FantasyNBA.Controllers
         // GET: Leagues
         public ActionResult Index()
         {
-            return View(db.Leagues.ToList());
+            if (User.IsInRole("CanManageLeagues"))
+            {
+                return View(db.Leagues.ToList());
+            }
+            return View("ReadOnlyIndex", db.Leagues.ToList());
         }
 
         // GET: Leagues/Details/5
@@ -38,7 +42,7 @@ namespace FantasyNBA.Controllers
         // GET: Leagues/Create
         public ActionResult Create()
         {
-            return View();
+                return View();
         }
 
         // POST: Leagues/Create
